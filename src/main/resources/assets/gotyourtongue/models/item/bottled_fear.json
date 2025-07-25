@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gotyourtongue:item/bottled_fear"
+  }
+}

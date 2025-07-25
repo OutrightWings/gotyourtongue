@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.outrightwings.gotyourtongue.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "gotyourtounge.refmap.json",
+  "mixins": [
+    "ElderMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}
