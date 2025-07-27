@@ -1,5 +1,6 @@
 package com.outrightwings.gotyourtongue.mixin;
 
+import com.outrightwings.gotyourtongue.Config;
 import com.outrightwings.gotyourtongue.entity.Silencable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -27,7 +28,7 @@ public class ElderMixin extends Guardian implements Silencable {
 
     protected void defineSynchedData(){
         super.defineSynchedData();
-        this.entityData.define(SILENCED,false);
+        this.entityData.define(SILENCED, !Config.default_scare);
     }
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
