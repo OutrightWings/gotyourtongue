@@ -43,6 +43,8 @@ public class ModItems {
         PotionBrewing.addMix(STRONG_HASTE.get(), Items.FERMENTED_SPIDER_EYE, STRONG_FATIGUE.get());
         PotionBrewing.addMix(LONG_HASTE.get(), Items.FERMENTED_SPIDER_EYE, LONG_FATIGUE.get());
 
+        PotionBrewing.addMix(HASTE.get(), Items.REDSTONE, LONG_HASTE.get());
+        PotionBrewing.addMix(HASTE.get(), Items.GLOWSTONE, STRONG_HASTE.get());
         PotionBrewing.addMix(STRONG_HASTE.get(), Items.REDSTONE, LONG_HASTE.get());
         PotionBrewing.addMix(LONG_HASTE.get(), Items.GLOWSTONE_DUST, STRONG_HASTE.get());
     }
