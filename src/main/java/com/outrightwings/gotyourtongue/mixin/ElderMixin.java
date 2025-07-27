@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+
 @Mixin(ElderGuardian.class)
 public class ElderMixin extends Guardian implements Silencable {
     private static final EntityDataAccessor<Boolean> SILENCED = SynchedEntityData.defineId(ElderGuardian.class, EntityDataSerializers.BOOLEAN);
@@ -26,9 +27,9 @@ public class ElderMixin extends Guardian implements Silencable {
     public boolean isSilenced(){return this.entityData.get(SILENCED);}
     public void setSilenced(boolean _s){this.entityData.set(SILENCED,_s);}
 
-    protected void defineSynchedData(){
-        super.defineSynchedData();
-        this.entityData.define(SILENCED, !Config.default_scare);
+    protected void defineSynchedData(SynchedEntityData.Builder builder){
+        super.defineSynchedData(builder);
+        builder.define(SILENCED, !Config.getDefaultScare());
     }
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);

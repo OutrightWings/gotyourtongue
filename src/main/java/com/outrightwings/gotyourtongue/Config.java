@@ -1,25 +1,16 @@
 package com.outrightwings.gotyourtongue;
 
+import net.neoforged.neoforge.common.ModConfigSpec;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
-
-@Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
-    private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-    private static final ForgeConfigSpec.BooleanValue DEFAULT_SCARE = BUILDER
+    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+    private static final ModConfigSpec.BooleanValue DEFAULT_SCARE = BUILDER
             .comment("Are elder guardians scary when they spawn?")
             .define("default_scare",true);
-    static final ForgeConfigSpec SPEC = BUILDER.build();
+    static final ModConfigSpec SPEC = BUILDER.build();
 
-
-    public static boolean default_scare;
-    @SubscribeEvent
-    static void onLoad(final ModConfigEvent event)
-    {
-        default_scare = DEFAULT_SCARE.get();
+    public static boolean getDefaultScare(){
+        return DEFAULT_SCARE.get();
     }
 }
 
